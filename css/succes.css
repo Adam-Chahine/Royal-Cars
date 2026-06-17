@@ -1,0 +1,189 @@
+    :root {
+        --primary: #ff4d30;
+        --primary-dark: #e63946;
+        --secondary: #1a2a6c;
+        --light: #ffffff;
+        --dark: #121212;
+        --medium-gray: #2a2a2a;
+        --text-light: #f8f8f8;
+        --success: #28a745;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Montserrat', 'Segoe UI', sans-serif;
+        background: var(--dark);
+        color: var(--text-light);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-image:
+            radial-gradient(circle at 25% 25%, rgba(255, 77, 48, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(26, 42, 108, 0.1) 0%, transparent 50%);
+    }
+
+    .notification-container {
+        text-align: center;
+        padding: 50px;
+        background: rgba(26, 26, 26, 0.9);
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        max-width: 500px;
+        width: 90%;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .notification-container::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg,
+                transparent 0%,
+                rgba(255, 77, 48, 0.1) 50%,
+                transparent 100%);
+        animation: rotate 10s linear infinite;
+        z-index: -1;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .notification-icon {
+        font-size: 4rem;
+        margin-bottom: 25px;
+        color: var(--primary);
+        text-shadow: 0 0 15px rgba(255, 77, 48, 0.5);
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.1);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: var(--light);
+        font-weight: 600;
+        position: relative;
+        display: inline-block;
+    }
+
+    h1::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: var(--primary);
+        border-radius: 3px;
+    }
+
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        max-width: 280px;
+        background: var(--primary);
+        color: white;
+        padding: 16px 24px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(255, 77, 48, 0.4);
+    }
+
+    .back-btn:active {
+        transform: translateY(0);
+    }
+
+    .notification-detail {
+        margin: 25px 0;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+        font-size: 1.05rem;
+    }
+
+    /* Different icons for different message types */
+    .icon-add::before {
+        content: "\f055";
+    }
+
+    /* plus-circle */
+    .icon-delete::before {
+        content: "\f056";
+    }
+
+    /* minus-circle */
+    .icon-modify::before {
+        content: "\f044";
+    }
+
+    /* edit */
+    .icon-hide::before {
+        content: "\f070";
+    }
+
+    /* eye-slash */
+    .icon-default::before {
+        content: "\f05a";
+    }
+
+    /* info-circle */
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        .notification-container {
+            padding: 40px 25px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+        }
+
+        .notification-icon {
+            font-size: 3.5rem;
+        }
+    }

@@ -1,0 +1,172 @@
+         :root {
+             --primary: #ff4d30;
+             --primary-dark: #e63946;
+             --secondary: #1a2a6c;
+             --light: #ffffff;
+             --light-gray: #f8f8f8;
+             --medium-gray: #e0e0e0;
+             --dark-gray: #777777;
+             --text: #333333;
+             --success: #27ae60;
+             --success-dark: #219150;
+         }
+
+         body {
+             font-family: 'Montserrat', Arial, sans-serif;
+             background-color: var(--light-gray);
+             color: var(--text);
+             margin: 0;
+             padding: 0;
+         }
+
+         .admin-container {
+             max-width: 1200px;
+             margin: 40px auto;
+             padding: 30px;
+             background-color: var(--light);
+             border-radius: 10px;
+             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+         }
+
+         .admin-header {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             margin-bottom: 30px;
+             padding-bottom: 20px;
+             border-bottom: 1px solid var(--medium-gray);
+         }
+
+         .admin-header h1 {
+             color: var(--primary);
+             margin: 0;
+             font-size: 2rem;
+             display: flex;
+             align-items: center;
+             gap: 10px;
+         }
+
+         .back-link {
+             color: var(--primary);
+             font-weight: 600;
+             text-decoration: none;
+             display: flex;
+             align-items: center;
+             gap: 8px;
+             padding: 8px 15px;
+             border-radius: 5px;
+             transition: all 0.3s ease;
+         }
+
+         .back-link:hover {
+             color: var(--primary-dark);
+             background-color: rgba(255, 77, 48, 0.1);
+             text-decoration: none;
+         }
+
+         .reservations-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+             gap: 25px;
+             margin-top: 30px;
+         }
+
+         .reservation-card {
+             background: var(--light);
+             border-radius: 8px;
+             padding: 20px;
+             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+             transition: all 0.3s ease;
+             border: 1px solid var(--medium-gray);
+             position: relative;
+         }
+
+         .reservation-card:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+             border-color: var(--primary);
+         }
+
+         .reservation-id {
+             position: absolute;
+             top: 15px;
+             right: 15px;
+             background-color: var(--secondary);
+             color: white;
+             padding: 3px 10px;
+             border-radius: 20px;
+             font-size: 0.8rem;
+             font-weight: 600;
+         }
+
+         .car-name {
+             color: var(--primary);
+             margin: 0 0 15px;
+             font-size: 1.4rem;
+             padding-right: 60px;
+         }
+
+         .client-info {
+             margin-bottom: 15px;
+         }
+
+         .info-item {
+             display: flex;
+             align-items: center;
+             gap: 8px;
+             margin-bottom: 8px;
+             font-size: 0.95rem;
+         }
+
+         .info-item i {
+             color: var(--dark-gray);
+             width: 20px;
+             text-align: center;
+         }
+
+         .make-available-btn {
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             gap: 8px;
+             width: 100%;
+             background-color: var(--success);
+             color: white;
+             border: none;
+             padding: 12px;
+             border-radius: 5px;
+             font-weight: 600;
+             cursor: pointer;
+             transition: all 0.3s ease;
+             margin-top: 15px;
+         }
+
+         .make-available-btn:hover {
+             background-color: var(--success-dark);
+             transform: translateY(-2px);
+             box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+         }
+
+         .empty-state {
+             text-align: center;
+             padding: 40px;
+             color: var(--dark-gray);
+             grid-column: 1 / -1;
+         }
+
+         .empty-state i {
+             font-size: 3rem;
+             color: var(--medium-gray);
+             margin-bottom: 20px;
+         }
+
+         @media (max-width: 768px) {
+             .admin-container {
+                 padding: 20px;
+                 margin: 20px;
+             }
+
+             .reservations-grid {
+                 grid-template-columns: 1fr;
+             }
+         }

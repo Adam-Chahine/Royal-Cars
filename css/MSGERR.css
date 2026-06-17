@@ -1,0 +1,113 @@
+        /* 1. Global Reset */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 2. Abstract Background Elements */
+        .bg-glow {
+            position: absolute;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(231, 76, 60, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: 0;
+        }
+
+        /* 3. The Error Container */
+        .main-wrapper {
+            position: relative;
+            z-index: 1;
+            text-align: left;
+            max-width: 600px;
+            padding: 40px;
+            border-left: 4px solid #f9532d;
+            /* Accent line */
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        /* 4. Luxury Branding */
+        .brand-header {
+            font-size: 14px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .brand-header span {
+            color: #f9532d;
+        }
+
+        /* 5. Typography */
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1;
+            margin: 0 0 20px 0;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #888;
+            margin-bottom: 40px;
+            max-width: 450px;
+            line-height: 1.6;
+        }
+
+        /* 6. Action Buttons */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 18px 30px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-main {
+            background-color: #f9532d;
+            color: white;
+        }
+
+        .btn-main:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .btn-alt {
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid #333;
+        }
+
+        .btn-alt:hover {
+            border-color: #f9532d;
+            color: #f9532d;
+        }
+
+        /* 7. Technical Details Decor */
+        .error-code {
+            margin-top: 50px;
+            font-family: monospace;
+            font-size: 12px;
+            color: #222;
+        }
